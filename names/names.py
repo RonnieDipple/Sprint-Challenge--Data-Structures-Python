@@ -21,10 +21,10 @@ names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
-binary_search_tree = BinarySearchTree(names_1[0])
-for a_name in names_1[1:]:
+binary_search_tree = BinarySearchTree(names_1[0]) #instantiating at the root
+for a_name in names_1[1:]: #Loops through placing names in the tree from name_1 starting position 1
     binary_search_tree.insert(a_name)
-for a_name in names_2:
+for a_name in names_2: #if it finds a duplicate it appends that to duplicates
     if binary_search_tree.contains(a_name):
         duplicates.append(a_name)
 
