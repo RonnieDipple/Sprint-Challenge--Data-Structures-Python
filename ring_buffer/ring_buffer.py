@@ -14,24 +14,31 @@ from doubly_linked_list import DoublyLinkedList
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.current = None
+        self.current = 0
         self.storage = DoublyLinkedList()
-        self.count = 0
+
 
     def append(self, item):
-        count = self.count
-        capacity = self.capacity
-        if (count < capacity):
-            self.storage[self.count] = item
-            self.count += 1
+        if self.current <= (self.capacity - 1):
+            self.storage.add_to_tail(item) #Adds to the end
+            self.current +=1 #moves current forward
         else:
-            self.storage[0] =item
-            self.count = 0
-        return self.count
+            i = self.current % self.capacity
+            head_to_be_updated = self.storage.head #head to be updated
+            for i in range(i):
+                head_to_be_updated = head_to_be_updated.next
+            head_to_be_updated.value = item
+            self.current += 1
+
 
     def get(self):
         # Note:  This is the only [] allowed
         list_buffer_contents = []
+
+        current_node = self.storage.head
+        while current_node is not None:
+            list_buffer_contents.append(current_node.value)
+            current_node = current_node.next
 
         # TODO: Your code here
 
