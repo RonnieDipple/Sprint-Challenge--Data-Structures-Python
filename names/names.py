@@ -1,4 +1,12 @@
 import time
+# You may not use the built in Python list, set, or dictionary in your solution for this problem.
+#     However, you can and should use the provided duplicates list to return your solution.
+#
+# (Hint: You might try importing a data structure you built during the week)
+
+#Obviously a binary search tree is needed
+#import previous project to solve current?
+
 
 start_time = time.time()
 
