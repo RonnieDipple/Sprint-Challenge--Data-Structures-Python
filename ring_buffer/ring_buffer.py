@@ -1,4 +1,14 @@
 from doubly_linked_list import DoublyLinkedList
+# Implement this behavior in the RingBuffer class. RingBuffer has two methods, append and get.
+# The append method adds elements to the buffer.
+# The get method, which is provided, returns all of the elements in the buffer in a list in their given order.
+# It should not return any None values in the list even if they are present in the ring buffer.
+#
+# You may not use a Python List in your implementation of the append method (except for the stretch goal)
+#
+# Stretch Goal: Another method of implementing a ring buffer uses an array (Python List) instead of a linked list.
+#     What are the advantages and disadvantages of using this method?
+# What disadvantage normally found in arrays is overcome with this arrangement?
 
 
 class RingBuffer:
@@ -6,9 +16,12 @@ class RingBuffer:
         self.capacity = capacity
         self.current = None
         self.storage = DoublyLinkedList()
+        self.count = 0
 
     def append(self, item):
-        pass
+        count = self.count
+        capacity = self.capacity
+        if (count < capacity):
 
     def get(self):
         # Note:  This is the only [] allowed
