@@ -54,4 +54,11 @@ class LinkedList:
     current_head = self.head
     previous = None
 
-    pass
+    while current_head is not None:
+      # The old confusing switcharoo from
+      # this week that I memorized and wrote down thank you
+      next = current_head.next_node
+      current_head.next_node = previous
+      previous = current_head
+      current_head = next
+    self.head = previous
