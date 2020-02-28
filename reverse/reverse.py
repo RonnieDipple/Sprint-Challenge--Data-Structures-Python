@@ -1,3 +1,9 @@
+# Inside of the reverse directory, you'll find a basic implementation of a Singly Linked List.
+# Without making it a Doubly Linked List (adding a tail attribute), complete the reverse_list()
+# function within reverse/reverse.py reverse the contents of the list.
+
+
+
 class Node:
   def __init__(self, value=None, next_node=None):
     # the value at this linked list node
@@ -44,4 +50,8 @@ class LinkedList:
 
   def reverse_list(self):
     # TO BE COMPLETED
+
+    current_head = self.head
+    previous = None
+
     pass
