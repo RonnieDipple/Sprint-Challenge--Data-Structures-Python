@@ -22,6 +22,12 @@ class RingBuffer:
         count = self.count
         capacity = self.capacity
         if (count < capacity):
+            self.storage[self.count] = item
+            self.count += 1
+        else:
+            self.storage[0] =item
+            self.count = 0
+        return self.count
 
     def get(self):
         # Note:  This is the only [] allowed
