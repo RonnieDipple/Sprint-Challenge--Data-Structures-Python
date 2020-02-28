@@ -28,6 +28,9 @@ for a_name in names_2: #if it finds a duplicate it appends that to duplicates
     if binary_search_tree.contains(a_name):
         duplicates.append(a_name)
 
+        
+#O(log n)
+
 # # Replace the nested for loops below with your improvements
 # for name_1 in names_1:
 #     for name_2 in names_2:
