@@ -56,7 +56,7 @@ class LinkedList:
 
     while current_head is not None:
       # The old confusing switcharoo from
-      # this week that I memorized and wrote down thank you
+      # this week that I tried and failed to memorize and wrote down thank you
       next = current_head.next_node
       current_head.next_node = previous
       previous = current_head
