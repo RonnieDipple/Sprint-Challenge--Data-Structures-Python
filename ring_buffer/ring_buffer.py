@@ -19,13 +19,19 @@ class RingBuffer:
 
 
     def append(self, item):
+        # Basically if nothing is in the ring
+        # do this
         if self.current <= (self.capacity - 1):
             self.storage.add_to_tail(item) #Adds to the end
             self.current +=1 #moves current forward
         else:
-            i = self.current % self.capacity
+            #basically if current has a value of say 2 use modulo operation to find
+            # the correct area to add things in, in a chain
+            mo = self.current % self.capacity
             head_to_be_updated = self.storage.head #head to be updated
-            for i in range(i):
+            #chain loop using the modulo equation, this whole section
+            # lays the items in the circular chain
+            for i in range(mo):
                 head_to_be_updated = head_to_be_updated.next
             head_to_be_updated.value = item
             self.current += 1
@@ -36,6 +42,7 @@ class RingBuffer:
         list_buffer_contents = []
 
         current_node = self.storage.head
+        # While node is not none, append the node value to list buffer contents
         while current_node is not None:
             list_buffer_contents.append(current_node.value)
             current_node = current_node.next
